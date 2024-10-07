@@ -125,32 +125,68 @@ nav ul{
    display: flex;
    gap: 70px;
 }
+.promotionSlider{
+   display: flex;
+}
+.promotionSlider i{
+   color: #FFF;
+   font-size: 25px;
+}
 .promoOption{
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
+   padding: 10px;
    background-color: var(--second-color);
    border-radius: 25px;
    border: 1px solid #000;
    color: #000;
+   transition: 0.2s;
+   cursor: pointer;
+}
+.promoOption:hover{
+   filter: brightness(1.05);
+}
+.promoOption:hover .addBtn{
+   transform: scale(1.1);
 }
 .promoOption img{
    width: 250px;
+   height: 250px;
 }
 .promoOption h3, .optionTitle{
-   font-size: 22px;
+   font-size: 25px;
    font-family: "Oleo Script", system-ui;
+   margin: 3px 0;
+}
+.promoPriceArea{
+   display: flex;
+}
+.discount{
+   font-size: 20px;
+   padding: 3px;
+   color: #d81414;
+}
+.discount::after{
+   content: '';
+   width: inherit;
+   height: 2px;
+   background-color: #000;
+   display: flex;
+   transform: rotate(8deg);
+   margin-top: -13px;
 }
 .promoPrice, .price{
    font-size: 20px;
    padding: 3px;
 }
 .addBtn{
-   font-size: 20px;
-   padding: 4px 8px;
+   font-size: 25px;
+   padding: 5px 10px;
    margin: 5px;
    border-radius: 50%;
+   transition: 0.2s;
    cursor: pointer;
 }
 .divNONE{
@@ -215,8 +251,8 @@ footer{
    padding: 70px;
    color: #FFF;
 }
-.navFooter p, .locals p, .hours p{
-   font-size: 17px;
+.navFooter p, .locals p, .hours p, .socialMediaArea p{
+   font-size: 20px;
    font-weight: 500;
    margin-bottom: 20px;
 }
@@ -226,14 +262,21 @@ footer{
 }
 .navFooter a, .localsArea p, .hoursArea p{
    font-size: 14px;
-   padding: 12px;
+   padding: 3px;
    text-decoration: none;
-   color: #FFF;
+   color: #EEE;
    transition: 0.1s;
    cursor: pointer;
 }
 .navFooter a:hover{
    text-decoration: underline;
+}
+.socialMedias{
+   margin-top: 15px;
+}
+.socialMedias i{
+   font-size: 20px;
+   margin: 5px;
 }
 
 .pizzaWindowArea {
