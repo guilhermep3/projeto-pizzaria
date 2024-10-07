@@ -55,10 +55,12 @@ nav ul{
 .cart{
    font-size: 22px;
    transform: scaleX(-1);
+   color: #FFF;
 }
 .menuMobile{
    font-size: 22px;
    display: none;
+   color: #FFF;
 }
 #banner{
    background-image: url(../images/pizzaBg.jpg);
@@ -72,6 +74,7 @@ nav ul{
    justify-content: center;
    align-items: start;
    flex-direction: column;
+   color: #FFF;
 }
 #banner h1{
    font-size: 50px;
@@ -97,6 +100,7 @@ nav ul{
 .secTitle{
    font-size: 20px;
    margin: 50px 0;
+   color: #FFF;
 }
 .secTitle h2::after{
    content: '';
@@ -120,6 +124,10 @@ nav ul{
 .promotionSlider{
    display: flex;
    gap: 20px;
+}
+.promotionSlider i{
+   color: #FFF;
+   font-size: 25px;
 }
 .promoOption{
    display: flex;
@@ -206,6 +214,7 @@ footer{
    justify-content: center;
    gap: 150px;
    padding: 70px;
+   color: #FFF;
 }
 .navFooter p, .locals p, .hours p{
    font-size: 17px;
@@ -236,7 +245,7 @@ footer{
    right:0;
    z-index: 100;
    background-color:rgba(255, 255, 255, 0.5);
-   display:flex;
+   display:none;
    transition: all ease 0.3s;
    justify-content: center;
    align-items: center;
