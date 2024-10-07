@@ -121,13 +121,9 @@ nav ul{
 #menu{
    background-color: #412d22;
 }
-.promotionSlider{
+.promotionsOptions{
    display: flex;
-   gap: 20px;
-}
-.promotionSlider i{
-   color: #FFF;
-   font-size: 25px;
+   gap: 70px;
 }
 .promoOption{
    display: flex;
@@ -156,6 +152,9 @@ nav ul{
    margin: 5px;
    border-radius: 50%;
    cursor: pointer;
+}
+.divNONE{
+   display: none;
 }
 .menuOptions{
    display: flex;
