@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Open Sans", sans-serif;
+}
+html{
+   scroll-behavior: smooth;
+}
+:root{
+   --main-color: #FEBE10;
+   --second-color: #D1C2A1;
+}
+body{
+   background-color: #573A2B;
+}
+header{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   position: fixed;
+   top: 0;
+   z-index: 10;
+   width: 100%;
+   margin: 0 auto;
+   background-color: #332729;
+   padding: 10px;
+}
+.logo{
+   font-size: 25px;
+   font-weight: bold;
+   color: var(--main-color);
+}
+.logo span{
+   color: #FFF;
+}
+nav ul{
+   display: flex;
+   gap: 20px;
+   list-style: none;
+}
+.navTop a{
+   font-size: 17px;
+   padding: 12px;
+   text-decoration: none;
+   color: #FFF;
+   border-bottom: 3px solid transparent;
+   transition: 0.1s;
+   cursor: pointer;
+}
+.navTop a:hover{
+   border-bottom: 3px solid var(--main-color);
+}
+.cart{
+   font-size: 22px;
+   transform: scaleX(-1);
+}
+.menuMobile{
+   font-size: 22px;
+   display: none;
+}
+#banner{
+   background-image: url(../images/pizzaBg.jpg);
+   background-position: center;
+   background-size: cover;
+   width: 100%;
+   height: 100vh;
+   padding: 20px;
+   padding-left: 100px;
+   display: flex;
+   justify-content: center;
+   align-items: start;
+   flex-direction: column;
+}
+#banner h1{
+   font-size: 50px;
+   font-family: "Oleo Script", system-ui;
+}
+#banner h2{
+   font-size: 30px;
+   font-weight: 400;
+   padding: 20px 0px 25px 0px;
+}
+#banner button{
+   font-size: 22px;
+   padding: 10px 20px;
+   border-radius: 25px;
+   border: 1px solid #000;
+   background-color: var(--main-color);
+   transition: 0.2s;
+   cursor: pointer;
+}
+#banner button:hover{
+   filter: brightness(1.1);
+}
+.secTitle{
+   font-size: 20px;
+   margin: 50px 0;
+}
+.secTitle h2::after{
+   content: '';
+   display: flex;
+   width: 120px;
+   height: 3px;
+   margin: 5px auto;
+   background-color: #FFF;
+}
+#promotions, #menu, #services{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   background-color: #473125;
+   padding-bottom: 50px;
+}
+#menu{
+   background-color: #412d22;
+}
+.promotionSlider{
+   display: flex;
+   gap: 20px;
+}
+.promoOption{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   background-color: var(--second-color);
+   border-radius: 25px;
+   border: 1px solid #000;
+   color: #000;
+}
+.promoOption img{
+   width: 250px;
+}
+.promoOption h3, .optionTitle{
+   font-size: 22px;
+   font-family: "Oleo Script", system-ui;
+}
+.promoPrice, .price{
+   font-size: 20px;
+   padding: 3px;
+}
+.addBtn{
+   font-size: 20px;
+   padding: 4px 8px;
+   margin: 5px;
+   border-radius: 50%;
+   cursor: pointer;
+}
+.menuOptions{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   max-width: 1200px;
+   gap: 80px;
+}
+.menuOption{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding: 10px;
+   background-color: var(--second-color);
+   color: #000;
+   border-top-left-radius: 130px;
+   border-top-right-radius: 130px;
+   transition: 0.2s;
+   cursor: pointer;
+}
+.menuOption:hover{
+   filter: brightness(1.05);
+}
+.menuOption img{
+   width: 240px;
+}
+
+.servicesArea{
+   display: flex;
+   gap: 70px;
+}
+.service{
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   width: 300px;
+   border: 1px solid #000;
+   background-color: var(--second-color);
+   color: #000;
+}
+.service img{
+   width: inherit;
+}
+.serviceText{
+   display: flex;
+   align-items: center;
+   height: 100px;
+   font-size: 17px;
+   text-align: center;
+   padding: 5px;
+}
+footer{
+   background-color: #332729;
+   display: flex;
+   justify-content: center;
+   gap: 150px;
+   padding: 70px;
+}
+.navFooter p, .locals p, .hours p{
+   font-size: 17px;
+   font-weight: 500;
+   margin-bottom: 20px;
+}
+.navFooter ul{
+   display: flex;
+   flex-direction: column;
+}
+.navFooter a, .localsArea p, .hoursArea p{
+   font-size: 14px;
+   padding: 12px;
+   text-decoration: none;
+   color: #FFF;
+   transition: 0.1s;
+   cursor: pointer;
+}
+.navFooter a:hover{
+   text-decoration: underline;
+}
+
+.pizzaWindowArea {
+   position:fixed;
+   left:0;
+   top:0;
+   bottom:0;
+   right:0;
+   z-index: 100;
+   background-color:rgba(255, 255, 255, 0.5);
+   display:flex;
+   transition: all ease 0.3s;
+   justify-content: center;
+   align-items: center;
+   overflow-y:auto;
+   margin-top: -100px;
+}
+.pizzaWindowBody {
+   width:900px;
+   background-color:#FFF;
+   border-radius:10px;
+   box-shadow:0px 0px 15px #999;
+   display:flex;
+   margin:20px 0px;
+}
+.pizzaImg {
+   flex:1;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+}
+.pizzaImg--back {
+   position:absolute;
+   width:30px;
+   height:30px;
+   background-color:#000;
+}
+.pizzaImg img {
+   height:400px;
+   width:auto;
+}
+.pizzaInfo {
+   flex:1;
+   padding-bottom:50px;
+}
+.pizzaInfo h1 {
+   margin-top:50px;
+   font-family: "Oleo Script", system-ui;
+}
+.pizzaInfo .pizzaInfo-desc {
+   font-size:15px;
+   color:#555;
+   margin-top:10px;
+}
+.pizzaInfo-sizeTitle, .pizzaInfo-priceTitle {
+   color:#555;
+   text-transform: uppercase;
+   font-size:14px;
+   margin-top:30px;
+   margin-bottom:10px;
+}
+.pizzaInfo-sizes {
+   display:inline-flex;
+   border-radius:10px;
+   overflow:hidden;
+}
+.pizzaInfo-size {
+   padding:10px 15px;
+   color:#000;
+   background-color:#EEE;
+   font-size:15px;
+   font-weight: bold;
+   cursor:pointer;
+   transition: 0.2s;
+}
+.pizzaInfo-size:hover {
+   filter: brightness(0.9);
+}
+.pizzaInfo-size.selected {
+   background-color:#573A2B;
+   color:#FFF;
+}
+.pizzaInfo-size.selected span {
+   color:#EEE;
+}
+.pizzaInfo-size span {
+   font-size:12px;
+   color:#555;
+   font-weight: normal;
+}
+.pizzaInfo-price {
+   display:flex;
+   align-items:center;
+}
+.pizzaInfo-actualPrice {
+   font-size:28px;
+   margin-right:30px;
+}
+.pizzaInfo-qtArea {
+   display:inline-flex;
+   background-color:#EEE;
+   border-radius:10px;
+   height:30px;
+}
+.pizzaInfo-qtArea button {
+   border:0;
+   background-color:transparent;
+   font-size:20px;
+   outline:0;
+   cursor:pointer;
+   padding:0px 10px;
+   color:#333;
+}
+.pizzaInfo-qt {
+   line-height: 30px;
+   font-size: 15px;
+   font-weight: bold;
+   padding: 0px 5px;
+   color:#000;
+}
+.pizzaInfo-addBtn {
+   font-size: 20px;
+   margin-top:30px;
+   padding:15px 20px;
+   border-radius:20px;
+   background-color: var(--main-color);
+   color:#000;
+   display:inline-block;
+   cursor:pointer;
+   margin-right:30px;
+   transition: 0.2s;
+}
+.pizzaInfo-addBtn:hover {
+   filter: brightness(1.1);
+}
+.pizzaInfo-cancelBtn {
+   display:inline-block;
+   cursor:pointer;
+   font-size: 17px;
+   padding: 7px 10px;
+   background-color: #EEE;
+   border-radius: 10px;
+}
+.pizzaInfo-cancelMobileBtn {
+   display:none;
+   height:40px;
+   text-align:center;
+   line-height: 40px;
+   margin-bottom:30px;
+}

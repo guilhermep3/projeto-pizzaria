@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="assets/style/style.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <title>LAPIZZA</title>
+</head>
+<body>
+   <header>
+      <div class="logo"><span>LA</span>PIZZA</div>
+      <nav class="navTop">
+         <ul>
+            <li><a href="#banner">HOME</a></li>
+            <li><a href="#menu">CARDÁPIO</a></li>
+            <li><a href="#services">SERVIÇOS</a></li>
+            <li><a href="#footer">CONTATO</a></li>
+         </ul>
+      </nav>
+      <div class="cart">
+         <i class="bi bi-cart"></i>
+      </div>
+      <div class="menuMobile">
+         <i class="bi bi-list"></i>
+      </div>
+   </header>
+   <main>
+      <section id="banner">
+         <h1>A MELHOR PIZZARIA<br> DA REGIÃO</h1>
+         <h2>Delivery com 10% de desconto</h2>
+         <button>Comprar</button>
+      </section>
+      <section id="promotions">
+         <div class="secTitle">
+            <h2>PROMOÇÕES</h2>
+         </div>
+         <div class="promotionsOptions">
+            <div class="promotionSlider">
+               <i class="bi bi-arrow-left-circle"></i>
+               <i class="bi bi-arrow-right-circle"></i>
+               <div class="promoOption currentPromo">
+                  <img src="assets/images/cocacola.png" alt="imagem da pizza">
+                  <h3 class="promoOptionTitle">----name----</h3>
+                  <p class="promoPrice">R$00,00</p>
+                  <button class="addBtn">+</button>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="menu">
+         <div class="secTitle">
+            <h2>CARDÁPIO</h2>
+         </div>
+         <div class="menuOptions">
+            <div class="menuOption">
+               <img src="assets/images/pizza1.png" alt="imagem da pizza">
+               <h3 class="optionTitle">--- Pizza ---</h3>
+               <p class="price">R$00,00</p>
+               <button class="addBtn">+</button>
+            </div>
+         </div>
+      </section>
+      <section id="services">
+         <div class="secTitle">
+            <h2>SERVIÇOS</h2>
+         </div>
+         <div class="servicesArea">
+            <div class="service">
+               <img src="assets/images/diferenciais1.jpg" alt="">
+               <div class="serviceText">
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam cupiditate nihil ipsam recusandae autem</p>
+               </div>
+            </div>
+         </div>
+      </section>
+      <footer id="footer">
+         <nav class="navFooter">
+            <p>Navegue</p>
+            <ul>
+               <li><a href="#banner">HOME</a></li>
+               <li><a href="#menu">CARDÁPIO</a></li>
+               <li><a href="#services">SERVIÇOS</a></li>
+               <li><a href="#footer">CONTATO</a></li>
+            </ul>
+         </nav>
+         <div class="locals">
+            <p>Locais</p>
+            <div class="localsArea">
+               <p>Avaré - Avenida Brasília, 900<br>Vila Cidade Jardim</p>
+               <p>Avaré - Rua Minas Gerais, 983<br>Centro Avaré</p>
+            </div>
+         </div>
+         <div class="hours">
+            <p>Horários</p>
+            <div class="hoursArea">
+               <p>SEG a SEX: 10:00 - 23:00</p>
+               <p>SÁB: 10:00 - 24:00</p>
+               <p>DOM: 9:00 - 24:00</p>
+            </div>
+         </div>
+         <div class="socialMediaArea">
+            <p>Redes sociais</p>
+            <div class="socialMedias">
+               <i class="bi bi-facebook"></i>
+               <i class="bi bi-instagram"></i>
+               <i class="bi bi-whatsapp"></i>
+            </div>
+         </div>
+      </footer>
+      <div class="pizzaWindowArea">
+         <div class="pizzaWindowBody">
+            <div class="pizzaInfo-cancelMobileBtn">Voltar</div>
+            <div class="pizzaImg">
+               <img src="assets/images/pizza11.png" alt="">
+            </div>
+            <div class="pizzaInfo">
+               <h1>Nome da pizza</h1>
+               <div class="pizzaInfo-desc">descricao ingredientes da pizza descricao ingredientes da pizza exemplo de descricao</div>
+               <div class="pizzaInfo-sizeArea">
+                  <div class="pizzaInfo-sizeTitle">Tamanho</div>
+                  <div class="pizzaInfo-sizes">
+                     <div data-key="0" class="pizzaInfo-size">PEQUENA <span>--</span></div>
+                     <div data-key="1" class="pizzaInfo-size">MÉDIA <span>--</span></div>
+                     <div data-key="2" class="pizzaInfo-size selected">GRANDE <span>--</span></div>
+                  </div>
+               </div>
+               <div class="pizzaInfo-priceArea">
+                  <div class="pizzaInfo-priceTitle">Preço</div>
+                  <div class="pizzaInfo-price">
+                     <div class="pizzaInfo-actualPrice">R$ --</div>
+                     <div class="pizzaInfo-qtArea">
+                         <button class="pizzaInfo-qtMenos">-</button>
+                         <div class="pizzaInfo-qt">1</div>
+                         <button class="pizzaInfo-qtMais">+</button>
+                     </div>
+                 </div>
+               </div>
+               <div class="pizzaInfo-addBtn">Adicionar ao carrinho</div>
+               <div class="pizzaInfo-cancelBtn">Cancelar</div>
+            </div>
+         </div>
+     </div>
+   </main>
+   <script src="assets/script/pizzas.js"></script>
+   <script src="assets/script/script.js"></script>
+</body>
+</html>
