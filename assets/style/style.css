@@ -11,9 +11,7 @@ html{
 :root{
    --main-color: #FEBE10;
    --second-color: #D1C2A1;
-}
-body{
-   background-color: #573A2B;
+   --bg-color: #272018;
 }
 header{
    display: flex;
@@ -24,7 +22,7 @@ header{
    z-index: 10;
    width: 100%;
    margin: 0 auto;
-   background-color: #332729;
+   background-color: #30382a;
    padding: 10px;
 }
 .logo{
@@ -56,18 +54,14 @@ nav ul{
    display: flex;
    justify-content: center;
    align-items: center;
-   font-size: 22px;
-   transform: scaleX(-1);
-   color: #FFF;
    gap: 5px;
-   border-radius: 10px;
-   border: 1px solid #EEE;
-   padding: 3px 5px;
-}
-.menuMobile{
+   padding: 5px 7px;
    font-size: 22px;
-   display: none;
+   border-radius: 10px;
+   border: 1px solid #000;
    color: #FFF;
+   background-color: #394430;
+   transform: scaleX(-1);
 }
 #banner{
    background-image: url(../images/pizzaBg.jpg);
@@ -115,18 +109,18 @@ nav ul{
    width: 120px;
    height: 3px;
    margin: 5px auto;
-   background-color: #FFF;
+   background-color: var(--main-color);
 }
 #promotions, #menu, #services{
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
-   background-color: #473125;
+   background-color: var(--bg-color);
    padding-bottom: 50px;
 }
 #menu{
-   background-color: #412d22;
+   background-color: #201b14;
 }
 .promotionsOptions{
    display: flex;
@@ -224,14 +218,17 @@ nav ul{
    color: #000;
    border-top-left-radius: 130px;
    border-top-right-radius: 130px;
+   border: 1px solid transparent;
    transition: 0.2s;
    cursor: pointer;
 }
 .menuOption:hover{
    filter: brightness(1.05);
+   border: 1px solid var(--main-color);
 }
 .menuOption img{
    width: 240px;
+   filter: drop-shadow(1px 5px 7px rgba(0, 0, 0, 0.5));
 }
 
 .servicesArea{
@@ -261,11 +258,11 @@ nav ul{
    padding: 5px;
 }
 footer{
-   background-color: #332729;
+   background-color: #30382a;
    display: flex;
    justify-content: center;
    gap: 150px;
-   padding: 70px;
+   padding: 30px;
    color: #FFF;
 }
 .navFooter p, .locals p, .hours p, .socialMediaArea p{
@@ -373,7 +370,7 @@ footer{
    filter: brightness(0.9);
 }
 .pizzaInfo-size.selected {
-   background-color:#573A2B;
+   background-color:var(--bg-color);
    color:#FFF;
 }
 .pizzaInfo-size.selected span {
