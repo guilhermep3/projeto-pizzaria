@@ -22,13 +22,14 @@ header{
    z-index: 10;
    width: 100%;
    margin: 0 auto;
-   background-color: #30382a;
+   background-color: #283122;
    padding: 10px;
 }
 .logo{
    font-size: 25px;
    font-weight: bold;
    color: var(--main-color);
+   font-family: "Oleo Script", system-ui;
 }
 .logo span{
    color: #FFF;
@@ -145,13 +146,14 @@ nav ul{
    padding: 10px;
    background-color: var(--second-color);
    border-radius: 25px;
-   border: 1px solid #000;
+   border: 2px solid transparent;
    color: #000;
    transition: 0.2s;
    cursor: pointer;
 }
-.promoOption:hover{
-   filter: brightness(1.05);
+.promoOption:hover, .menuOption:hover{
+   filter: brightness(1.1);
+   border: 2px solid var(--main-color);
 }
 .promoOption:hover .addBtn{
    transform: scale(1.1);
@@ -162,8 +164,8 @@ nav ul{
 }
 .promoOptionTitle, .optionTitle{
    font-size: 25px;
-   font-family: "Oleo Script", system-ui;
-   margin: 3px 0;
+   font-family: "Roboto", sans-serif;
+   margin: 5px 0;
    text-align: center;
 }
 .promoPriceArea{
@@ -192,11 +194,15 @@ nav ul{
    padding: 5px 12px;
    margin: 5px;
    border-radius: 50%;
+   border: 1px solid #000;
    transition: 0.2s;
    cursor: pointer;
 }
 .menuOption:hover .addBtn{
    transform: scale(1.1);
+}
+.addBtn:hover{
+   background-color: var(--main-color);
 }
 .divNONE{
    display: none;
@@ -218,13 +224,9 @@ nav ul{
    color: #000;
    border-top-left-radius: 130px;
    border-top-right-radius: 130px;
-   border: 1px solid transparent;
+   border: 2px solid transparent;
    transition: 0.2s;
    cursor: pointer;
-}
-.menuOption:hover{
-   filter: brightness(1.05);
-   border: 1px solid var(--main-color);
 }
 .menuOption img{
    width: 240px;
@@ -258,7 +260,7 @@ nav ul{
    padding: 5px;
 }
 footer{
-   background-color: #30382a;
+   background-color: #283122;
    display: flex;
    justify-content: center;
    gap: 150px;
@@ -300,7 +302,7 @@ footer{
    bottom:0;
    right:0;
    z-index: 100;
-   background-color:rgba(255, 255, 255, 0.5);
+   background-color:rgba(0, 0, 0, 0.5);
    display:none;
    transition: all ease 0.3s;
    justify-content: center;
@@ -338,7 +340,7 @@ footer{
 }
 .pizzaInfo h1 {
    margin-top:50px;
-   font-family: "Oleo Script", system-ui;
+   font-family: "Roboto", sans-serif;
 }
 .pizzaInfo .pizzaInfo-desc {
    font-size:15px;
@@ -442,18 +444,92 @@ footer{
    margin-bottom:30px;
 }
 aside {
-   background-color:#9ccbe6;
+   background-color:#999;
    width:0vw;
    font-family:'Hepta Slab', Helvetica, Arial;
    transition:all ease .2s;
    overflow-x:hidden;
-   display: none;
+   position: fixed;
+   top: 75px;
+   right: 0;
+   border-bottom-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+   border: 1px solid #000;
 }
-aside.show {
-   width:30vw;
+.show {
+   width:25vw;
 }
-.cart--area {
+.cartArea {
    padding:15px;
+}
+.cart {
+   margin-bottom:20px;
+}
+.cart--item {
+   display:flex;
+   align-items:center;
+   margin:10px 0;
+}
+.cart--item img {
+   width:40px;
+   height:40px;
+   margin-right:20px;
+}
+.cart--item-nome {
+   flex:1;
+}
+.cart--item--qtarea {
+   display:inline-flex;
+   background-color:#EEE;
+   border-radius:10px;
+   height:30px;
+}
+.cart--item--qtarea button {
+   border:0;
+   background-color:transparent;
+   font-size:17px;
+   outline:0;
+   cursor:pointer;
+   padding:0px 10px;
+   color:#333;
+}
+.cart--item--qt {
+   line-height: 30px;
+   font-size: 12px;
+   font-weight: bold;
+   padding: 0px 5px;
+   color:#000;
+}
+.cartTotalTtem {
+   padding:15px 0;
+   border-top:1px solid #555;
+   color:#000;
+   display:flex;
+   justify-content: space-between;
+   font-size:15px;
+}
+.cartTotalTtem span:first-child {
+   font-weight: bold;
+}
+.cartTotalTtem.big {
+   font-size:20px;
+   color:#000;
+   font-weight: bold;
+}
+.cartFinish{
+   font-size: 18px;
+   padding:15px 25px;
+   border-radius:20px;
+   background-color: var(--main-color);
+   color:#000;
+   cursor:pointer;
+   text-align:center;
+   margin-top:20px;
+   border:2px solid var(--main-color);
+   transition: all ease .2s;
+}
+.cartFinish:hover {
+   filter: brightness(1.1);
 }
 
 
