@@ -53,9 +53,16 @@ nav ul{
    border-bottom: 3px solid var(--main-color);
 }
 .cart{
+   display: flex;
+   justify-content: center;
+   align-items: center;
    font-size: 22px;
    transform: scaleX(-1);
    color: #FFF;
+   gap: 5px;
+   border-radius: 10px;
+   border: 1px solid #EEE;
+   padding: 3px 5px;
 }
 .menuMobile{
    font-size: 22px;
@@ -159,10 +166,11 @@ nav ul{
    width: 260px;
    height: 260px;
 }
-.promoOption h3, .optionTitle{
+.promoOptionTitle, .optionTitle{
    font-size: 25px;
    font-family: "Oleo Script", system-ui;
    margin: 3px 0;
+   text-align: center;
 }
 .promoPriceArea{
    display: flex;
@@ -228,6 +236,8 @@ nav ul{
 
 .servicesArea{
    display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
    gap: 70px;
 }
 .service{
@@ -434,6 +444,20 @@ footer{
    line-height: 40px;
    margin-bottom:30px;
 }
+aside {
+   background-color:#9ccbe6;
+   width:0vw;
+   font-family:'Hepta Slab', Helvetica, Arial;
+   transition:all ease .2s;
+   overflow-x:hidden;
+   display: none;
+}
+aside.show {
+   width:30vw;
+}
+.cart--area {
+   padding:15px;
+}
 
 
 @media (max-width:1000px) {
@@ -446,7 +470,7 @@ footer{
       padding: 5px;
    }
    .menuOption img{
-      width: 130px;
+      width: 120px;
    }
 }
 
@@ -460,13 +484,28 @@ footer{
    .pizza-item {
        max-width:100%;
    }
-   header {
-       display:flex;
+   header{
+      justify-content: space-between;
+      padding: 10px 30px;
+      width: 100%;
+   }
+   .navTop {
+      display:none;
+   }
+   .menuMobile{
+      display: block;
    }
    main {
-       padding-top:60px;
+       padding-top:40px;
    }
-
+   #banner{
+      background-image: url(../images/pizzaBgMobile.jpg);
+      height: 75vh;
+      padding-left: 40px;
+   }
+   .promotionsOptions{
+      width: 100%;
+   }
    aside {
        width:auto;
        position:fixed;
@@ -479,7 +518,7 @@ footer{
    aside.show {
        width:auto;
    }
-   .cart--area {
+   .cartArea {
        width:100vw;
    }
 
@@ -501,37 +540,82 @@ footer{
        margin:0;
    }
 
-   .pizzaBig img {
+   .pizzaImg img {
        width: 75%;
        height: auto;
    }
 
    .pizzaInfo h1 {
-       margin-top:20px;
+      margin-top:20px;
    }
 
-   .pizzaInfo--qtarea {
-       height:60px;
+   .pizzaInfo-qtArea {
+      height:60px;
    }
    .pizzaInfo--qtarea button {
-       font-size:25px;
-       padding:0px 25px;
+      font-size:25px;
+      padding:0px 25px;
    }
-   .pizzaInfo--qt {
-       line-height: 60px;
-       font-size:20px;
+   .pizzaInfo-qt {
+      line-height: 60px;
+      font-size:20px;
    }
-   .pizzaInfo--addButton {
-       font-size:20px;
-       display:block;
-       text-align:center;
-       margin:30px auto;
+   .pizzaInfo-addBtn {
+      font-size:20px;
+      display:block;
+      text-align:center;
+      margin:30px auto;
    }
 
-   .pizzaInfo--cancelButton {
+   .pizzaInfo-cancelBtn {
        display:none;
    }
-   .pizzaInfo--cancelMobileButton {
+   .pizzaInfo-cancelMobileBtn {
        display:block;
+   }
+   .menuOptions{
+      gap: 10px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+   }
+   .menuOption{
+      margin-bottom: 10px;
+   }
+   .promoOptionTitle, .optionTitle{
+      font-size: 21px;
+   }
+   .price, .promoPrice{
+      font-size: 18px;
+   }
+   .servicesArea{
+      gap: 30px;
+   }
+   .service{
+      width: 150px;
+   }
+   .serviceText{
+      font-size: 13px;
+   }
+   footer{
+      gap: 20px;
+      padding: 30px;
+   }
+   .navFooter p, .locals p, .hours p, .socialMediaArea p{
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 10px;
+   }
+   .navFooter a, .localsArea p, .hoursArea p{
+      font-size: 14px;
+      padding: 3px;
+      text-decoration: none;
+      color: #EEE;
+      transition: 0.1s;
+      cursor: pointer;
+   }
+   .socialMedias{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
    }
 }
