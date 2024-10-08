@@ -123,7 +123,11 @@ nav ul{
 }
 .promotionsOptions{
    display: flex;
+   justify-content: center;
+   padding: 7px 0;
    gap: 70px;
+   max-width: 1200px;
+   overflow-x: auto;
 }
 .promotionSlider{
    display: flex;
@@ -152,8 +156,8 @@ nav ul{
    transform: scale(1.1);
 }
 .promoOption img{
-   width: 250px;
-   height: 250px;
+   width: 260px;
+   height: 260px;
 }
 .promoOption h3, .optionTitle{
    font-size: 25px;
