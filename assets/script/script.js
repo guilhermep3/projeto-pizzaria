@@ -128,11 +128,49 @@ qs('.pizzaInfo-addBtn').addEventListener('click',(e)=>{
 function updateCart(){
    if(cart.length > 0){
       qs('aside').classList.add('show');
-      console.log(cart.length)
+      qs('.cart').innerHTML = ''
+      for(let i in cart){
+         let pizzaItem = pizzaJson.find((item)=>item.id == cart[i].id);
+         let cartItem = qs('.cart--item').cloneNode(true);
+
+         let pizzaSizeName = '';
+         switch (cart[i].size) {
+            case 0:
+               pizzaSizeName = "P"
+               break;
+            case 1:
+               pizzaSizeName = "M"
+               break;
+            case 2:
+               pizzaSizeName = "G"
+               break;
+         }
+         let pizzaName = `${pizzaItem.name} (${pizzaSizeName})`;
+
+         cartItem.querySelector('img').src = pizzaItem.img;
+         cartItem.querySelector('.cart--item-nome').innerHTML = pizzaName;
+         cartItem.querySelector('.cart--item--qt').innerHTML = cart[i].qt
+         cartItem.querySelector('.cart--item-qtmenos').addEventListener('click',()=>{
+            if(cart[i].qt > 1){
+               cart[i].qt--;
+            } else {
+               cart.splice(i, 1);
+            }
+            updateCart();
+         });
+         cartItem.querySelector('.cart--item-qtmais').addEventListener('click',()=>{
+            cart[i].qt++;
+            updateCart();
+         });
+         qs('.cart').append(cartItem);
+      }
    } else {
       qs('aside').classList.remove('show');
    }
 }
 qs('.menuCloser').addEventListener('click',()=>{
    qs('aside').classList.remove('show');
+})
+qs('.cart').addEventListener('click', ()=>{
+   qs('aside').classList.add('show');
 })

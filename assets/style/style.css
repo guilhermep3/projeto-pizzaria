@@ -51,7 +51,7 @@ nav ul{
 .navTop a:hover{
    border-bottom: 3px solid var(--main-color);
 }
-.cart{
+.cartLogo{
    display: flex;
    justify-content: center;
    align-items: center;
@@ -443,6 +443,10 @@ footer{
    line-height: 40px;
    margin-bottom:30px;
 }
+.menuCloser {
+   display:block;
+   cursor: pointer;
+}
 aside {
    background-color:#999;
    width:0vw;
@@ -450,7 +454,7 @@ aside {
    transition:all ease .2s;
    overflow-x:hidden;
    position: fixed;
-   top: 75px;
+   top: 50px;
    right: 0;
    border-bottom-left-radius: 20px;
    border-bottom-right-radius: 20px;
@@ -461,9 +465,6 @@ aside {
 }
 .cartArea {
    padding:15px;
-}
-.cart {
-   margin-bottom:20px;
 }
 .cart--item {
    display:flex;
@@ -579,38 +580,24 @@ aside {
    .promotionsOptions{
       width: 100%;
    }
-   aside {
-       width:auto;
-       position:fixed;
-       left:100vw;
-       right:0;
-       top:0;
-       bottom:0;
-       transition: all ease .2s;
+   .menuCloser {
+      display:block;
    }
-   aside.show {
-       width:auto;
+   .show{
+      width: auto;
    }
-   .cartArea {
-       width:100vw;
-   }
-
-   .menu-closer {
-       display:block;
-   }
-
    .pizzaWindowArea {
-       justify-content:flex-start;
-       align-items: flex-start;
+      justify-content:flex-start;
+      align-items: flex-start;
    }
 
    .pizzaWindowBody {
-       width:100vw;
-       display:block;
-       padding:20px;
-       border-radius:0;
-       box-shadow:none;
-       margin:0;
+      width:100vw;
+      display:block;
+      padding:20px;
+      border-radius:0;
+      box-shadow:none;
+      margin:0;
    }
 
    .pizzaImg img {
