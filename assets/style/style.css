@@ -155,7 +155,7 @@ nav ul{
    filter: brightness(1.1);
    border: 2px solid var(--main-color);
 }
-.promoOption:hover .addBtn{
+.promoOption:hover .addBtn, .menuOption:hover .addBtn, .drinkOption:hover .addBtn{
    transform: scale(1.1);
 }
 .promoOption img{
@@ -185,7 +185,7 @@ nav ul{
    transform: rotate(8deg);
    margin-top: -13px;
 }
-.promoPrice, .price{
+.promoPrice, .price, .drinkPrice{
    font-size: 20px;
    padding: 3px;
 }
@@ -198,16 +198,13 @@ nav ul{
    transition: 0.2s;
    cursor: pointer;
 }
-.menuOption:hover .addBtn{
-   transform: scale(1.1);
-}
 .addBtn:hover{
    background-color: var(--main-color);
 }
 .divNONE{
    display: none;
 }
-.menuOptions{
+.menuOptions, .drinksOptions{
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
@@ -228,9 +225,22 @@ nav ul{
    transition: 0.2s;
    cursor: pointer;
 }
-.menuOption img{
+.menuOption img, .drinkOption img{
    width: 240px;
    filter: drop-shadow(1px 5px 7px rgba(0, 0, 0, 0.5));
+}
+.drinkOption{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding: 10px;
+   background-color: var(--second-color);
+   color: #000;
+   border-radius: 20px;
+   border: 2px solid transparent;
+   transition: 0.2s;
+   cursor: pointer;
 }
 
 .servicesArea{
@@ -320,7 +330,7 @@ footer{
    margin: 5px;
 }
 
-.pizzaWindowArea {
+.pizzaWindowArea, .drinkWindowArea {
    position:fixed;
    left:0;
    top:0;
@@ -335,7 +345,7 @@ footer{
    overflow-y:auto;
    margin-top: -100px;
 }
-.pizzaWindowBody {
+.pizzaWindowBody, .drinkWindowBody{
    width:900px;
    background-color:#FFF;
    border-radius:10px;
@@ -343,7 +353,7 @@ footer{
    display:flex;
    margin:20px 0px;
 }
-.pizzaImg {
+.pizzaImg, .drinkImg {
    flex:1;
    display:flex;
    justify-content: center;
@@ -355,36 +365,36 @@ footer{
    height:30px;
    background-color:#000;
 }
-.pizzaImg img {
+.pizzaImg img, .drinkImg img{
    height:400px;
    width:auto;
 }
-.pizzaInfo {
+.pizzaInfo, .drinkInfo{
    flex:1;
    padding-bottom:50px;
 }
-.pizzaInfo h1 {
+.pizzaInfo h1, .drinkInfo h1 {
    margin-top:50px;
    font-family: "Roboto", sans-serif;
 }
-.pizzaInfo .pizzaInfo-desc {
+.pizzaInfo .pizzaInfo-desc, .drinkInfo .drinkInfo-desc {
    font-size:15px;
    color:#555;
    margin-top:10px;
 }
-.pizzaInfo-sizeTitle, .pizzaInfo-priceTitle {
+.pizzaInfo-sizeTitle, .pizzaInfo-priceTitl, .drinkInfo-sizeTitle, .drinkInfo-priceTitle {
    color:#555;
    text-transform: uppercase;
    font-size:14px;
    margin-top:30px;
    margin-bottom:10px;
 }
-.pizzaInfo-sizes {
+.pizzaInfo-sizes, .drinkInfo-sizes {
    display:inline-flex;
    border-radius:10px;
    overflow:hidden;
 }
-.pizzaInfo-size {
+.pizzaInfo-size, .drinkInfo-size {
    padding:10px 15px;
    color:#000;
    background-color:#EEE;
@@ -393,36 +403,36 @@ footer{
    cursor:pointer;
    transition: 0.2s;
 }
-.pizzaInfo-size:hover {
+.pizzaInfo-size:hover, .drinkInfo-size:hover {
    filter: brightness(0.9);
 }
-.pizzaInfo-size.selected {
+.pizzaInfo-size.selected, .drinkInfo-size.selected{
    background-color:var(--bg-color);
    color:#FFF;
 }
-.pizzaInfo-size.selected span {
+.pizzaInfo-size.selected span, .drinkInfo-size.selected span{
    color:#EEE;
 }
-.pizzaInfo-size span {
+.pizzaInfo-size span, .drinkInfo-size span {
    font-size:12px;
    color:#555;
    font-weight: normal;
 }
-.pizzaInfo-price {
+.pizzaInfo-price, .drinkInfo-price {
    display:flex;
    align-items:center;
 }
-.pizzaInfo-actualPrice {
+.pizzaInfo-actualPrice, .drinkInfo-actualPrice {
    font-size:28px;
    margin-right:30px;
 }
-.pizzaInfo-qtArea {
+.pizzaInfo-qtArea, .drinkInfo-qtArea {
    display:inline-flex;
    background-color:#EEE;
    border-radius:10px;
    height:30px;
 }
-.pizzaInfo-qtArea button {
+.pizzaInfo-qtArea button, .drinkInfo-qtArea button {
    border:0;
    background-color:transparent;
    font-size:20px;
@@ -431,14 +441,14 @@ footer{
    padding:0px 10px;
    color:#333;
 }
-.pizzaInfo-qt {
+.pizzaInfo-qt, .drinkInfo-qt {
    line-height: 30px;
    font-size: 15px;
    font-weight: bold;
    padding: 0px 5px;
    color:#000;
 }
-.pizzaInfo-addBtn {
+.pizzaInfo-addBtn, .drinkInfo-addBtn {
    font-size: 20px;
    margin-top:30px;
    padding:15px 20px;
@@ -450,10 +460,10 @@ footer{
    margin-right:30px;
    transition: 0.2s;
 }
-.pizzaInfo-addBtn:hover {
+.pizzaInfo-addBtn:hover, .drinkInfo-addBtn:hover {
    filter: brightness(1.1);
 }
-.pizzaInfo-cancelBtn {
+.pizzaInfo-cancelBtn, .drinkInfo-cancelBtn {
    display:inline-block;
    cursor:pointer;
    font-size: 17px;
@@ -461,7 +471,7 @@ footer{
    background-color: #EEE;
    border-radius: 10px;
 }
-.pizzaInfo-cancelMobileBtn {
+.pizzaInfo-cancelMobileBtn, .drinkInfo-cancelMobileBtn {
    display:none;
    height:40px;
    text-align:center;

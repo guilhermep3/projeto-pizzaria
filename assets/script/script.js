@@ -43,19 +43,45 @@ qsa('.promoOption').forEach((e)=>{
    })
 });
 
-drinks.map((item, index)=>{
+drinksJson.map((item, index)=>{
    let drinkOption = qs('.drinkOption').cloneNode(true);
+
    drinkOption.setAttribute('data-key', index);
    qs('.drinksOptions').append(drinkOption);
-   drinkOption.querySelector('img').src = item.src;
+   drinkOption.querySelector('img').src = item.img;
    drinkOption.querySelector('.drinkTitle').innerHTML = item.name;
-   drinkOption.querySelector('.priceDrink').innerHTML = `R$${item.price.toFixed(2)}`;
-   drinkOption.addEventListener('click', (e)=>{
+   drinkOption.querySelector('.drinkPrice').innerHTML = `R$${item.price.toFixed(2)}`;
+   drinkOption.addEventListener("click", (e)=>{
       let key = e.target.closest('.drinkOption').getAttribute('data-key');
       modalKey = key;
       modalQt = 1;
+      qs('.drinkImg img').src = drinksJson[key].img;
+      qs('.drinkInfo h1').innerHTML = drinksJson[key].name;
+      qs('.drinkInfo-desc').innerHTML = drinksJson[key].description;
+      qs('.drinkInfo-actualPrice').innerHTML = `R$${drinksJson[key].price.toFixed(2)}`;
+      qs('.drinkInfo-size.selected').classList.remove('selected');
+      qsa('.drinkInfo-size').forEach((size, sizeIndex)=>{
+         if(sizeIndex == 2){
+            size.classList.add('selected');
+         }
+         size.querySelector('span').innerHTML = drinksJson[key].sizes[sizeIndex];
+      });
+      qs('.pizzaInfo-qt').innerHTML = modalQt;
+   });
+});
+qsa('.drinkOption').forEach((e)=>{
+   e.addEventListener('click',(e)=>{
+      qs('.drinkWindowArea').style.opacity = '0';
+      qs('.drinkWindowArea').style.display = 'flex';
+      setTimeout(()=>{
+         qs('.drinkWindowArea').style.opacity = '1';
+         qs('.drinkWindowArea').style.marginTop = '0px';
+      },50)
    })
 });
+
+// Eventos do DRINK WINDOW
+
 
 pizzaJson.map((item, index)=>{
    let pizzaItem = qs('.menuOption').cloneNode(true);
@@ -94,7 +120,7 @@ qsa('.menuOption').forEach((e)=>{
    })
 });
 
-// Eventos do modal
+// Eventos do window
 function closeWindow (){
    qs('.pizzaWindowArea').style.opacity = '0';
    qs('.pizzaWindowArea').style.marginTop = '-100px';
