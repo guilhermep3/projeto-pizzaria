@@ -23,7 +23,7 @@ header{
    width: 100%;
    margin: 0 auto;
    background-color: #283122;
-   padding: 10px;
+   padding: 5px;
 }
 .logo{
    font-size: 25px;
@@ -41,7 +41,7 @@ nav ul{
 }
 .navTop a{
    font-size: 17px;
-   padding: 12px;
+   padding: 15px 10px;
    text-decoration: none;
    color: #FFF;
    border-bottom: 3px solid transparent;
@@ -112,7 +112,7 @@ nav ul{
    margin: 5px auto;
    background-color: var(--main-color);
 }
-#promotions, #menu, #services{
+#promotions, #drinks, #menu, #services{
    display: flex;
    justify-content: center;
    align-items: center;
@@ -120,7 +120,7 @@ nav ul{
    background-color: var(--bg-color);
    padding-bottom: 50px;
 }
-#menu{
+#drinks, #services{
    background-color: #201b14;
 }
 .promotionsOptions{
@@ -151,7 +151,7 @@ nav ul{
    transition: 0.2s;
    cursor: pointer;
 }
-.promoOption:hover, .menuOption:hover{
+.promoOption:hover, .menuOption:hover, .drinkOption:hover{
    filter: brightness(1.1);
    border: 2px solid var(--main-color);
 }
@@ -162,7 +162,7 @@ nav ul{
    width: 260px;
    height: 260px;
 }
-.promoOptionTitle, .optionTitle{
+.promoOptionTitle, .optionTitle, .drinkTitle{
    font-size: 25px;
    font-family: "Roboto", sans-serif;
    margin: 5px 0;
@@ -258,6 +258,31 @@ nav ul{
    font-size: 17px;
    text-align: center;
    padding: 5px;
+}
+.servicesContact{
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   max-width: 1050px;
+   margin-top: 50px;
+   padding: 15px 0;
+   border-top: 1px solid var(--main-color);
+   border-bottom: 1px solid var(--main-color);
+   color: #FFF;
+}
+.servicesText{
+   flex: 2;
+   font-size: 18px;
+   line-height: 25px;
+}
+.servicesNumber{
+   flex: 1;
+   text-align: center;
+   font-size: 22px;
+   cursor: pointer;
+}
+.servicesNumber i{
+   margin-right: 10px;
 }
 footer{
    background-color: #283122;

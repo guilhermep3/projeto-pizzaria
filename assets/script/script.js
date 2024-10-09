@@ -43,12 +43,26 @@ qsa('.promoOption').forEach((e)=>{
    })
 });
 
+drinks.map((item, index)=>{
+   let drinkOption = qs('.drinkOption').cloneNode(true);
+   drinkOption.setAttribute('data-key', index);
+   qs('.drinksOptions').append(drinkOption);
+   drinkOption.querySelector('img').src = item.src;
+   drinkOption.querySelector('.drinkTitle').innerHTML = item.name;
+   drinkOption.querySelector('.priceDrink').innerHTML = `R$${item.price.toFixed(2)}`;
+   drinkOption.addEventListener('click', (e)=>{
+      let key = e.target.closest('.drinkOption').getAttribute('data-key');
+      modalKey = key;
+      modalQt = 1;
+   })
+});
+
 pizzaJson.map((item, index)=>{
    let pizzaItem = qs('.menuOption').cloneNode(true);
 
    pizzaItem.setAttribute('data-key', index);
    qs('.menuOptions').append(pizzaItem);
-   pizzaItem.querySelector("img").src = item.img;
+   pizzaItem.querySelector('img').src = item.img;
    pizzaItem.querySelector('.optionTitle').innerHTML = item.name;
    pizzaItem.querySelector('.price').innerHTML = `R$${item.price.toFixed(2)}`;
    pizzaItem.addEventListener("click", (e)=>{
