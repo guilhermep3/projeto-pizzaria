@@ -5,44 +5,6 @@ let modalKey = 0;
 let qs = (el)=>document.querySelector(el);
 let qsa = (el)=>document.querySelectorAll(el);
 
-promotionJson.map((item, index)=>{
-   let promoOption = qs('.promoOption').cloneNode(true);
-
-   promoOption.setAttribute('data-key', index)
-   qs('.promotionsOptions').append(promoOption);
-   promoOption.querySelector('img').src = item.img;
-   promoOption.querySelector('.promoOptionTitle').innerHTML = item.name;
-   promoOption.querySelector('.discount').innerHTML = `R$${item.discount.toFixed(2)}`;
-   promoOption.querySelector('.promoPrice').innerHTML = `R$${item.price.toFixed(2)}`;
-   promoOption.addEventListener('click', (e)=>{
-      let keyPromo = e.target.closest('.promoOption').getAttribute('data-key');
-      modalQt = 1;
-      console.log(promotionJson[keyPromo])
-      qs('.pizzaImg img').src = promotionJson[keyPromo].img;
-      qs('.pizzaInfo h1').innerHTML = promotionJson[keyPromo].name;
-      qs('.pizzaInfo-desc').innerHTML = promotionJson[keyPromo].description;
-      qs('.pizzaInfo-actualPrice').innerHTML = `R$${promotionJson[keyPromo].price.toFixed(2)}`;
-      qs('.pizzaInfo-size.selected').classList.remove('selected');
-      qsa('.pizzaInfo-size').forEach((size, sizeIndex)=>{
-         if(sizeIndex == 2){
-            size.classList.add('selected');
-         }
-         size.querySelector('span').innerHTML = promotionJson[keyPromo].sizes[sizeIndex];
-      });
-      qs('.pizzaInfo-qt').innerHTML = modalQt;
-   })
-});
-qsa('.promoOption').forEach((e)=>{
-   e.addEventListener('click',()=>{
-      qs('.pizzaWindowArea').style.opacity = '0';
-      qs('.pizzaWindowArea').style.display = 'flex';
-      setTimeout(()=>{
-         qs('.pizzaWindowArea').style.opacity = '1';
-         qs('.pizzaWindowArea').style.marginTop = '0px';
-      },50)
-   })
-});
-
 pizzaJson.map((item, index)=>{
    let pizzaItem = qs('.menuOption').cloneNode(true);
    pizzaItem.setAttribute('data-key', index);

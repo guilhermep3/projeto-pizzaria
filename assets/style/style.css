@@ -112,7 +112,7 @@ nav ul{
    margin: 5px auto;
    background-color: var(--main-color);
 }
-#promotions, #drinks, #menu, #services{
+#drinks, #menu, #services{
    display: flex;
    justify-content: center;
    align-items: center;
@@ -123,53 +123,18 @@ nav ul{
 #drinks, #services{
    background-color: #201b14;
 }
-.promotionsOptions{
-   display: flex;
-   justify-content: center;
-   padding: 7px 0;
-   gap: 70px;
-   max-width: 1200px;
-   overflow-x: auto;
-}
-.promotionSlider{
-   display: flex;
-}
-.promotionSlider i{
-   color: #FFF;
-   font-size: 25px;
-}
-.promoOption{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   padding: 10px;
-   background-color: var(--second-color);
-   border-radius: 25px;
-   border: 2px solid transparent;
-   color: #000;
-   transition: 0.2s;
-   cursor: pointer;
-}
-.promoOption:hover, .menuOption:hover, .drinkOption:hover{
+.menuOption:hover, .drinkOption:hover{
    filter: brightness(1.1);
    border: 2px solid var(--main-color);
 }
-.promoOption:hover .addBtn, .menuOption:hover .addBtn, .drinkOption:hover .addBtn{
+.menuOption:hover .addBtn, .drinkOption:hover .addBtn{
    transform: scale(1.1);
 }
-.promoOption img{
-   width: 260px;
-   height: 260px;
-}
-.promoOptionTitle, .optionTitle, .drinkTitle{
+.optionTitle, .drinkTitle{
    font-size: 25px;
    font-family: "Roboto", sans-serif;
    margin: 5px 0;
    text-align: center;
-}
-.promoPriceArea{
-   display: flex;
 }
 .discount{
    font-size: 20px;
@@ -185,7 +150,7 @@ nav ul{
    transform: rotate(8deg);
    margin-top: -13px;
 }
-.promoPrice, .price, .drinkPrice{
+.price, .drinkPrice{
    font-size: 20px;
    padding: 3px;
 }
@@ -612,9 +577,6 @@ aside {
       height: 75vh;
       padding-left: 40px;
    }
-   .promotionsOptions{
-      width: 100%;
-   }
    .menuCloser {
       display:block;
    }
@@ -676,10 +638,10 @@ aside {
    .menuOption{
       margin-bottom: 10px;
    }
-   .promoOptionTitle, .optionTitle{
+   .optionTitle{
       font-size: 21px;
    }
-   .price, .promoPrice{
+   .price{
       font-size: 18px;
    }
    .servicesArea{

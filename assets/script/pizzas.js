@@ -26,12 +26,3 @@ let drinksJson = [
     {id:8, name:'Heineken', img:'assets/images/drink/heineken.png', price:6.78, sizes:['250ml', '350ml', '500ml'], description:'O melhor preço para você'},
     {id:9, name:'Skol', img:'assets/images/drink/skol.png', price:5.61, sizes:['250ml', '350ml', '500ml'], description:'O melhor preço para você'}
 ]
-let promotionJson = [
-    {id:1, name:'Frango com Catupiry', img:'assets/images/pizza/pizzafrangocomcatupiry.png', price:29.00, discount:32.99, sizes:['320g','530g','860g'], description:'Promoção com desconto pizza em oferta'},
-    {id:2, name:'Coca-Cola', img:'assets/images/drink/cocacola.png', price:9.00, discount:11.90, sizes:['2L', '2.5L','3L'], description:'O melhor preço para você'},
-    {id:3, name:'Guaraná', img:'assets/images/drink/guarana.png', price:7.50, discount:9.50, sizes:['2L', '2.5L','3L'], description:'Super oferta somente hoje'},
-    {id:4, name:'Quatro Queijos', img:'assets/images/pizza/pizzaquatroqueijos.png', price:27.11, discount:29.50, sizes:['320g','530g','860g'], description:'Super oferta somente hoje'},
-    {id:5, name:'Heineken', img:'assets/images/drink/heineken.png', price:6.78, discount:8.10, sizes:['250ml', '350ml', '500ml'], description:'Super oferta somente hoje'},
-    {id:6, name:'Chocolate', img:'assets/images/pizza/pizzachocolate.png', price:31.36, discount:33.50, sizes:['320g','530g','860g'], description:'Super oferta somente hoje'},
-    {id:7, name:'Fanta Laranja', img:'assets/images/drink/fanta.png', price:4.10, discount:5.15, sizes:['250ml', '350ml', '500ml'], description:'Super oferta somente hoje'}
-]
