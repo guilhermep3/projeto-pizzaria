@@ -8,6 +8,16 @@
 html{
    scroll-behavior: smooth;
 }
+::-webkit-scrollbar{
+   display: block;
+   width: 10px;
+}
+::-webkit-scrollbar-thumb{
+   background-color: var(--main-color);
+}
+::-webkit-scrollbar-track{
+   background-color: #201b14;
+}
 :root{
    --main-color: #FEBE10;
    --second-color: #D1C2A1;
@@ -124,7 +134,7 @@ nav ul{
    background-color: var(--bg-color);
    padding-bottom: 50px;
 }
-#drinks, #services{
+#drinks{
    background-color: #201b14;
 }
 .menuOption:hover, .drinkOption:hover{
@@ -459,17 +469,19 @@ aside {
    max-height: 100vh;
    overflow-y: auto;
    font-family:'Hepta Slab', Helvetica, Arial;
-   transition:all ease .2s;
+   transition:all ease 0.3s;
    overflow-x:hidden;
    position: fixed;
    top: 50px;
-   right: 0;
+   right: -3px;
    border-bottom-left-radius: 20px;
    border-bottom-right-radius: 20px;
    border: 1px solid #000;
+   display: none;
 }
 .show {
    width:25vw;
+   display: block;
 }
 .cartArea {
    padding:5px 10px 10px 10px;
@@ -558,17 +570,18 @@ aside {
 
 @media (max-width:840px) {
    body {
-       flex-direction: column;
+      width: 100%;
+      flex-direction: column;
    }
    .pizza-area {
-       display:block;
+      display:block;
    }
    .pizza-item {
        max-width:100%;
    }
    header{
       justify-content: space-between;
-      padding: 10px 20px;
+      padding: 5px;
       width: 100%;
    }
    .navTop {
@@ -699,5 +712,8 @@ aside {
    .servicesNumber{
       font-size: 20px;
       margin-right: 5px;
+   }
+   aside{
+      padding-top: 10px;
    }
 }
