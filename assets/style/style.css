@@ -62,6 +62,9 @@ nav ul{
    border: 1px solid #000;
    color: #FFF;
    background-color: #394430;
+   cursor: pointer;
+}
+.cartLogo i{
    transform: scaleX(-1);
 }
 #banner{
@@ -98,6 +101,7 @@ nav ul{
 }
 #banner button:hover{
    filter: brightness(1.1);
+   transform: scale(1.1);
 }
 .secTitle{
    font-size: 20px;
@@ -126,9 +130,10 @@ nav ul{
 .menuOption:hover, .drinkOption:hover{
    filter: brightness(1.1);
    border: 2px solid var(--main-color);
+   transform: scale(1.03);
 }
 .menuOption:hover .addBtn, .drinkOption:hover .addBtn{
-   transform: scale(1.1);
+   transform: scale(1.15);
 }
 .optionTitle, .drinkTitle{
    font-size: 25px;
@@ -333,6 +338,7 @@ footer{
 .pizzaImg img, .drinkImg img{
    height:400px;
    width:auto;
+   padding: 15px;
 }
 .pizzaInfo, .drinkInfo{
    flex:1;
@@ -448,8 +454,10 @@ footer{
    cursor: pointer;
 }
 aside {
-   background-color:#999;
+   background-color:#93AA80;
    width:0vw;
+   max-height: 100vh;
+   overflow-y: auto;
    font-family:'Hepta Slab', Helvetica, Arial;
    transition:all ease .2s;
    overflow-x:hidden;
@@ -464,7 +472,7 @@ aside {
    width:25vw;
 }
 .cartArea {
-   padding:15px;
+   padding:5px 10px 10px 10px;
 }
 .cart--item {
    display:flex;
@@ -560,7 +568,7 @@ aside {
    }
    header{
       justify-content: space-between;
-      padding: 10px 30px;
+      padding: 10px 20px;
       width: 100%;
    }
    .navTop {
@@ -583,12 +591,12 @@ aside {
    .show{
       width: auto;
    }
-   .pizzaWindowArea {
+   .pizzaWindowArea, .drinkWindowArea {
       justify-content:flex-start;
       align-items: flex-start;
    }
 
-   .pizzaWindowBody {
+   .pizzaWindowBody, .drinkWindowBody {
       width:100vw;
       display:block;
       padding:20px;
@@ -597,19 +605,19 @@ aside {
       margin:0;
    }
 
-   .pizzaImg img {
+   .pizzaImg img, .drinkImg img{
        width: 75%;
        height: auto;
    }
 
-   .pizzaInfo h1 {
+   .pizzaInfo h1, .drinkInfo h1 {
       margin-top:20px;
    }
 
-   .pizzaInfo-qtArea {
+   .pizzaInfo-qtArea, .drinkInfo-qtArea {
       height:60px;
    }
-   .pizzaInfo--qtarea button {
+   .pizzaInfo-qtArea button, .drinkInfo-qtArea button {
       font-size:25px;
       padding:0px 25px;
    }
@@ -638,11 +646,17 @@ aside {
    .menuOption{
       margin-bottom: 10px;
    }
-   .optionTitle{
-      font-size: 21px;
+   .optionTitle, .drinkTitle{
+      font-size: 17px;
    }
-   .price{
-      font-size: 18px;
+   .price, .drinkPrice{
+      font-size: 15px;
+   }
+   .drinksOptions{
+      gap: 10px;
+   }
+   .menuOption img, .drinkOption img{
+      width: 140px;
    }
    .servicesArea{
       gap: 30px;
@@ -674,5 +688,16 @@ aside {
       display: flex;
       align-items: center;
       flex-direction: column;
+   }
+   .servicesContact{
+      margin-top: 40px;
+   }
+   .servicesText{
+      font-size: 15px;
+      margin-left: 5px;
+   }
+   .servicesNumber{
+      font-size: 20px;
+      margin-right: 5px;
    }
 }

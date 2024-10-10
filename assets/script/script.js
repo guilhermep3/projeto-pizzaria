@@ -1,6 +1,9 @@
 let cart = [];
 let modalQt = 0;
 let modalKey = 0;
+let subtotal = 0;
+let desconto = 0;
+let total = 0;
 
 let qs = (el)=>document.querySelector(el);
 let qsa = (el)=>document.querySelectorAll(el);
@@ -157,11 +160,13 @@ qs('.drinkInfo-addBtn').addEventListener('click',(e)=>{
 });
 
 function updateCart(){
+   qs('.cartLogo span').innerHTML = cart.length;
    if(cart.length > 0){
       qs('aside').classList.add('show');
       qs('.cart').innerHTML = ''
       for(let i in cart){
          let pizzaItem = pizzaJson.find((item)=>item.id == cart[i].id);
+         subtotal = pizzaItem.price * cart[i].qt;
          let cartItem = qs('.cart--item').cloneNode(true);
 
          let pizzaSizeName = '';
@@ -195,16 +200,23 @@ function updateCart(){
          });
          qs('.cart').append(cartItem);
       }
+      desconto = subtotal * 0.1;
+      total = subtotal - desconto;
+      qs('.subtotal span:last-child').innerHTML = `R$${subtotal.toFixed(2)}`
+      qs('.desconto span:last-child').innerHTML = `R$${desconto.toFixed(2)}`
+      qs('.total span:last-child').innerHTML = `R$${total.toFixed(2)}`
    } else {
       qs('aside').classList.remove('show');
    }
 }
 function updateCartDrink(){
+   qs('.cartLogo span').innerHTML = cart.length
    if(cart.length > 0){
       qs('aside').classList.add('show');
       qs('.cart').innerHTML = ''
       for(let i in cart){
          let drinkOption = drinksJson.find((item)=>item.id == cart[i].id);
+         subtotal = drinkOption.price * cart[i].qt;
          let cartItem = qs('.cart--item').cloneNode(true);
 
          let drinkSizeName = '';
@@ -238,6 +250,11 @@ function updateCartDrink(){
          });
          qs('.cart').append(cartItem);
       }
+      desconto = subtotal * 0.1;
+      total = subtotal - desconto;
+      qs('.subtotal span:last-child').innerHTML = `R$${subtotal.toFixed(2)}`
+      qs('.desconto span:last-child').innerHTML = `R$${desconto.toFixed(2)}`
+      qs('.total span:last-child').innerHTML = `R$${total.toFixed(2)}`
    } else {
       qs('aside').classList.remove('show');
    }
@@ -247,4 +264,24 @@ qs('.menuCloser').addEventListener('click',()=>{
 })
 qs('.cart').addEventListener('click', ()=>{
    qs('aside').classList.add('show');
+})
+qs('.cartLogo').addEventListener('click', ()=>{
+   qs('aside').classList.toggle('show');
+})
+
+window.sr = ScrollReveal({reset: true})
+sr.reveal('.revealTop', {
+   duration: 1000,
+   distance: '70px',
+   origin: 'top'
+})
+sr.reveal('.revealRight', {
+   duration: 1000,
+   distance: '70px',
+   origin: 'right'
+})
+sr.reveal('.revealBottom',{
+   duration: 1000,
+   distance: '70px',
+   origin: 'bottom'
 })
