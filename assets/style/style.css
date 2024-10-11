@@ -127,13 +127,17 @@ nav ul{
    margin: 5px auto;
    background-color: var(--main-color);
 }
-#menu, #services{
+#menu, #services, #contact{
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
    background-color: var(--bg-color);
    padding-bottom: 50px;
+   border-top: 2px solid var(--main-color);
+}
+#menu{
+   background-color: #201b14;
 }
 .menuOption:hover{
    filter: brightness(1.1);
@@ -210,6 +214,7 @@ nav ul{
 .servicesArea{
    display: flex;
    justify-content: center;
+   align-items: center;
    flex-wrap: wrap;
    gap: 70px;
 }
@@ -233,29 +238,38 @@ nav ul{
    text-align: center;
    padding: 5px;
 }
-.servicesContact{
+#contact{
    display: flex;
+   justify-content: center;
    align-items: center;
-   gap: 10px;
-   max-width: 1050px;
-   margin-top: 50px;
-   padding: 15px 0;
-   border-top: 1px solid var(--main-color);
-   border-bottom: 1px solid var(--main-color);
+   padding-bottom: 20px;
+   border-top: 2px solid var(--main-color);
+   border-bottom: 2px solid var(--main-color);
    color: #FFF;
 }
-.servicesText{
+.contactAreas{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.contactText{
    flex: 2;
    font-size: 18px;
-   line-height: 25px;
+   line-height: 27px;
+   max-width: 550px;
+   margin-bottom: 20px;
 }
-.servicesNumber{
+.contactNumber{
    flex: 1;
    text-align: center;
    font-size: 22px;
    cursor: pointer;
+   padding-bottom: 3px;
+   border-bottom: 2px solid var(--main-color);
+   display: inline;
+   transition: 0.1s;
 }
-.servicesNumber i{
+.contactNumber i{
    margin-right: 10px;
 }
 footer{
@@ -687,9 +701,6 @@ aside {
       align-items: center;
       flex-direction: column;
    }
-   .servicesContact{
-      margin-top: 40px;
-   }
    .servicesText{
       font-size: 15px;
       margin-left: 5px;
@@ -700,5 +711,24 @@ aside {
    }
    aside{
       padding-top: 10px;
+   }
+   .contactAreas{
+      flex-direction: column;
+   }
+   .contactLeft{
+      text-align: center;
+   }
+   .contactText{
+      font-size: 14px;
+      padding: 0 20px;
+      line-height: 20px;
+   }
+   .contactNumber{
+      font-size: 15px;
+   }
+   .contactRight iframe{
+      margin-top: 15px;
+      width: 80vw;
+      height: 220px;
    }
 }
