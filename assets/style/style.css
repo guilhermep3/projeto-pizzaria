@@ -475,11 +475,9 @@ aside {
    border-bottom-left-radius: 20px;
    border-bottom-right-radius: 20px;
    border: 1px solid #000;
-   display: none;
 }
-.show {
+aside.show {
    width:25vw;
-   display: block;
 }
 .cartArea {
    padding:5px 10px 10px 10px;
@@ -549,6 +547,9 @@ aside {
 }
 .cartFinish:hover {
    filter: brightness(1.1);
+}
+.menuCloser {
+   display: none;
 }
 
 

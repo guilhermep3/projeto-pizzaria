@@ -1,9 +1,7 @@
 let cart = [];
 let modalQt = 0;
 let modalKey = 0;
-let subtotal = 0;
-let desconto = 0;
-let total = 0;
+
 
 let qs = (el)=>document.querySelector(el);
 let qsa = (el)=>document.querySelectorAll(el);
@@ -17,8 +15,8 @@ pizzaJson.map((item, index)=>{
    pizzaItem.querySelector('.price').innerHTML = `R$${item.price.toFixed(2)}`;
    pizzaItem.addEventListener("click", (e)=>{
       let key = e.target.closest('.menuOption').getAttribute('data-key');
-      modalKey = key;
       modalQt = 1;
+      modalKey = key;
       qs('.pizzaImg img').src = pizzaJson[key].img;
       qs('.pizzaInfo h1').innerHTML = pizzaJson[key].name;
       qs('.pizzaInfo-desc').innerHTML = pizzaJson[key].description;
@@ -77,8 +75,8 @@ qsa('.pizzaInfo-size').forEach((size, sizeIndex)=>{
 });
 qs('.pizzaInfo-addBtn').addEventListener('click',(e)=>{
    let size = parseInt(qs('.pizzaInfo-size.selected').getAttribute('data-key'));
-   let identifier = pizzaJson[modalKey].id+'@'+size;
-   let key = cart.findIndex((item)=>item.identifier === identifier)
+   let identifier = pizzaJson[modalKey].id+'@'+size
+   let key = cart.findIndex((item)=>item.identifier == identifier)
    if(key > -1){
       cart[key].qt += modalQt
    } else {
@@ -86,8 +84,8 @@ qs('.pizzaInfo-addBtn').addEventListener('click',(e)=>{
          identifier,
          id:pizzaJson[modalKey].id,
          size,
-         qt:modalQt
-      });
+         qt: modalQt
+      })
    }
    updateCart();
    closeWindow();
@@ -95,32 +93,34 @@ qs('.pizzaInfo-addBtn').addEventListener('click',(e)=>{
 
 function updateCart(){
    qs('.cartLogo span').innerHTML = cart.length;
+   qs('.cart').innerHTML = '';
+   let subtotal = 0;
+   let desconto = 0;
+   let total = 0;
    if(cart.length > 0){
       qs('aside').classList.add('show');
-      qs('.cart').innerHTML = ''
       for(let i in cart){
          let pizzaItem = pizzaJson.find((item)=>item.id == cart[i].id);
-         subtotal = pizzaItem.price * cart[i].qt;
-         let cartItem = qs('.cart--item').cloneNode(true);
+         subtotal += pizzaItem.price * cart[i].qt;
 
+         let cartItem = qs('.cart--item').cloneNode(true);
          let pizzaSizeName = '';
-         switch (cart[i].size) {
+         switch(cart[i].size){
             case 0:
-               pizzaSizeName = "P"
+               pizzaSizeName = 'P'
                break;
             case 1:
-               pizzaSizeName = "M"
+               pizzaSizeName = 'M'
                break;
             case 2:
-               pizzaSizeName = "G"
+               pizzaSizeName = 'G'
                break;
          }
          let pizzaName = `${pizzaItem.name} (${pizzaSizeName})`;
-
          cartItem.querySelector('img').src = pizzaItem.img;
          cartItem.querySelector('.cart--item-nome').innerHTML = pizzaName;
-         cartItem.querySelector('.cart--item--qt').innerHTML = cart[i].qt
-         cartItem.querySelector('.cart--item-qtmenos').addEventListener('click',()=>{
+         cartItem.querySelector('.cart--item--qt').innerHTML = cart[i].qt;
+         cartItem.querySelector('.cart--item-qtmenos').addEventListener('click', ()=>{
             if(cart[i].qt > 1){
                cart[i].qt--;
             } else {
@@ -128,7 +128,7 @@ function updateCart(){
             }
             updateCart();
          });
-         cartItem.querySelector('.cart--item-qtmais').addEventListener('click',()=>{
+         cartItem.querySelector('.cart--item-qtmais').addEventListener('click', ()=>{
             cart[i].qt++;
             updateCart();
          });
@@ -136,9 +136,10 @@ function updateCart(){
       }
       desconto = subtotal * 0.1;
       total = subtotal - desconto;
-      qs('.subtotal span:last-child').innerHTML = `R$${subtotal.toFixed(2)}`
-      qs('.desconto span:last-child').innerHTML = `R$${desconto.toFixed(2)}`
-      qs('.total span:last-child').innerHTML = `R$${total.toFixed(2)}`
+
+      qs('.subtotal span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`;
+      qs('.desconto span:last-child').innerHTML = `R$ ${desconto.toFixed(2)}`;
+      qs('.total span:last-child').innerHTML = `R$ ${total.toFixed(2)}`;
    } else {
       qs('aside').classList.remove('show');
    }
