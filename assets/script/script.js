@@ -99,6 +99,7 @@ function updateCart(){
    let total = 0;
    if(cart.length > 0){
       qs('aside').classList.add('show');
+      qs('aside').style.display = 'block';
       for(let i in cart){
          let pizzaItem = pizzaJson.find((item)=>item.id == cart[i].id);
          subtotal += pizzaItem.price * cart[i].qt;
@@ -125,6 +126,7 @@ function updateCart(){
                cart[i].qt--;
             } else {
                cart.splice(i, 1);
+               qs('aside').style.display = 'none';
             }
             updateCart();
          });
@@ -142,10 +144,12 @@ function updateCart(){
       qs('.total span:last-child').innerHTML = `R$ ${total.toFixed(2)}`;
    } else {
       qs('aside').classList.remove('show');
+      qs('aside').style.display = 'none';
    }
 }
 qs('.menuCloser').addEventListener('click',()=>{
    qs('aside').classList.remove('show');
+   qs('aside').style.display = 'none';
 })
 qs('.cart').addEventListener('click', ()=>{
    qs('aside').classList.add('show');
@@ -170,3 +174,24 @@ sr.reveal('.revealBottom',{
    distance: '70px',
    origin: 'bottom'
 })
+
+/*
+   aside {
+   background-color:#93AA80;
+   width:0vw;
+   max-height: 100vh;
+   overflow-y: auto;
+   font-family:'Hepta Slab', Helvetica, Arial;
+   transition:all ease 0.3s;
+   overflow-x:hidden;
+   position: fixed;
+   top: 50px;
+   right: -3px;
+   border-bottom-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+   border: 1px solid #000;
+}
+aside.show {
+   width:25vw;
+}
+*/

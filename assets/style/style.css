@@ -470,8 +470,9 @@ aside {
    transition:all ease 0.3s;
    overflow-x:hidden;
    position: fixed;
-   top: 50px;
+   top: 47px;
    right: -3px;
+   padding-bottom: 20px;
    border-bottom-left-radius: 20px;
    border-bottom-right-radius: 20px;
    border: 1px solid #000;
